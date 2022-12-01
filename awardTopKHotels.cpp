@@ -75,9 +75,9 @@ bool cmp(std::pair<int, int> a, std::pair<int, int> b) {
 vector<int> awardTopKHotels(string positiveKeywords, string negativeKeywords, vector<int> hotelIds, vector<string> reviews, int k) {
     vector<int> res;
     //preprocess the input words
-    set<string> pos = stringSplit(positiveKeywords, " ");
-    set<string> neg = stringSplit(negativeKeywords, " ");
-    map<int, int> hotelId2score;
+    set<string> pos = stringSplit(positiveKeywords, " ");//Time & Space: O(I) I is the size of postive words
+    set<string> neg = stringSplit(negativeKeywords, " ");//Time & Space: O(J) J is the size of negtive words
+    map<int, int> hotelId2score; // Space: O(N)
     for(int i = 0; i < hotelIds.size(); ++i) {
         int hotelId = hotelIds[i];
         string review = reviews[i];
